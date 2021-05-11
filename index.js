@@ -30,7 +30,9 @@ const updatePaths = () => {
     // const ls = points.map(pointToL).join(" ");
     // path.setAttributeNS("", "d", `M${first[0]},${first[1]} ${ls}`);
 
-    const points = makePoints([0, 0], [300, 0]);
+    const length = parseFloat(document.getElementById('length').value);
+
+    const points = makePoints([0, 0], [length, 0]);
     const transformPoint = ([x, y]) => ({ x, y });
     const theD = makeSmooth(points.map(transformPoint));
     path.setAttributeNS("", "d", theD);
