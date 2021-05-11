@@ -2,35 +2,17 @@ import { makeSmooth } from "./makeSmooth.js";
 import wigglePoint from "./wigglePoint.js";
 
 import createRandom from "./createRandom.js";
+import createIntermediaryPoints from './createIntermediaryPoints.js';
 
 const random = createRandom(2);
 
-const distance = (a, b) =>
-  Math.sqrt(Math.pow(a[0] - b[0], 2) + Math.pow(a[1] - b[1], 2));
-
-const minInterval = 15;
-const maxInterval = 50;
-const getInterval = () => random() * (maxInterval - minInterval) + minInterval;
-const createIntermediaryPoints = (origin, destination) => {
-  const dist = distance(origin, destination);
-  const unitVectorX = (destination[0] - origin[0]) / dist;
-  const unitVectorY = (destination[1] - origin[1]) / dist;
-  const unitVector = [unitVectorX, unitVectorY];
-
-  const points = [];
-  for (
-    let currentDist = maxInterval;
-    currentDist <= dist - maxInterval;
-    currentDist += getInterval()
-  ) {
-    const newPoint = [unitVector[0] * currentDist, unitVector[1] * currentDist];
-    points.push(newPoint);
-  }
-  return points;
-};
-
 const makePoints = (origin, destination) => {
-  const points = createIntermediaryPoints(origin, destination);
+  const minInterval = parseFloat(document.getElementById("min-interval").value);
+  const maxInterval = parseFloat(document.getElementById("max-interval").value);
+  const points = createIntermediaryPoints(minInterval, maxInterval)(random)(
+    origin,
+    destination
+  );
 
   const wiggliness = document.getElementById("wiggliness").value;
 
