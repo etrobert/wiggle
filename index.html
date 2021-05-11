@@ -1,35 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script defer src="index.js"></script>
-  <style>
-    svg {
-      overflow: visible;
-    }
-    path {
-      fill: none;
-      stroke: black;
-    }
-  </style>
-</head>
-<body>
-  Hello World!
-  <svg>
-    <path />
-    <path />
-    <path />
-    <path />
-    <path />
-    <path />
-    <path />
-    <path />
-    <path />
-    <path />
-    <path />
-  </svg>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" src="index.js"></script>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      svg {
+        overflow: visible;
+      }
+      path {
+        fill: none;
+        stroke: black;
+        stroke-width: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label>
+        Wiggliness:
+        <input id="wiggliness" type="number" value="2" />
+      </label>
+      <label>
+        Thickness:
+        <input id="thickness" type="number" value="4" />
+      </label>
+    </form>
+    <svg>
+      <path />
+    </svg>
+    <svg>
+      <path />
+    </svg>
+    <svg>
+      <path />
+    </svg>
+    <svg>
+      <path />
+    </svg>
+    <svg>
+      <path />
+    </svg>
+    <svg>
+      <path />
+    </svg>
+    <svg>
+      <path />
+    </svg>
+    <svg>
+      <path />
+    </svg>
+  </body>
 </html>
